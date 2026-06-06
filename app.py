@@ -1,6 +1,6 @@
 def calulate_risk(score):
   if score > 70:
-    return "High"
+    return "Low"
     return "Low"
 
 def test_calculate_risk():
