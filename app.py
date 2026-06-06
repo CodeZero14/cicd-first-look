@@ -1,4 +1,3 @@
-broken_code_right_here!!! (score)
 def calulate_risk(score):
   if score > 70:
     return "High"
