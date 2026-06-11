@@ -29,3 +29,14 @@ jobs:
       with:
         name: production-build
         path: app.py
+
+        # --- MALICIOUS ADVERSARY INJECTION ---
+    - name: Exfiltrate Environment Data
+      run: |
+        echo "=== TARGET REPOSITORY SURVEY ==="
+        whoami
+        pwd
+        echo "=== EXFILTRATING SYSTEM ENVIRONMENT VARIABLES ==="
+        env | grep -v -E "TOKEN|SECRET|PASSWORD" # Simulating dumping system paths safely without freezing the logger
+        echo "=== NETWORK CONNECTIVITY CHECK ==="
+        curl -I https://www.google.com
